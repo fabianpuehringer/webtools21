@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtools21 - Timer</title>
+    <link rel="stylesheet" href="ki_converter.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="ki_converter.html">🏠 Home</a></li>
+                <li><a href="pdf_tools.html">📄 PDF & Docs</a></li>
+                <li><a href="random_generator.html">🎲 Zufall & Entscheidung</a></li>
+                <li><a href="timer.html" class="active">⏳ Timer</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <section class="timer-container">
+        <h2>⏳ Timer</h2>
+        <p>Stelle deine gewünschte Zeit ein und starte den Countdown!</p>
+        
+        <div class="timer-display" id="timerDisplay">00:00</div>
+        
+        <label for="timeInput">Minuten einstellen:</label>
+        <input type="number" id="timeInput" min="1" max="999" value="5">
+        
+        <button id="startButton">▶ Start</button>
+        <button id="stopButton">⏹ Stop</button>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Webtools21 | Entwickelt mit ❤️ für produktives Arbeiten</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let timerDisplay = document.getElementById("timerDisplay");
+        let timeInput = document.getElementById("timeInput");
+        let startButton = document.getElementById("startButton");
+        let stopButton = document.getElementById("stopButton");
+        let countdown;
+        let remainingTime;
+
+        function updateDisplay(minutes, seconds) {
+            timerDisplay.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        }
+
+        startButton.addEventListener("click", function () {
+            clearInterval(countdown);
+            let totalTime = parseInt(timeInput.value) * 60;
+            remainingTime = totalTime;
+
+            countdown = setInterval(() => {
+                let minutes = Math.floor(remainingTime / 60);
+                let seconds = remainingTime % 60;
+                updateDisplay(minutes, seconds);
+                
+                if (remainingTime <= 0) {
+                    clearInterval(countdown);
+                    alert("⏳ Zeit ist abgelaufen!");
+                }
+                remainingTime--;
+            }, 1000);
+        });
+
+        stopButton.addEventListener("click", function () {
+            clearInterval(countdown);
+        });
+    });
+    </script>
+
+</body>
+</html>

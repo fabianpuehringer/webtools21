@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtools21 - PDF & Docs</title>
+    <link rel="stylesheet" href="ki_converter.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="ki_converter.html">🏠 Home</a></li>
+                <li><a href="pdf_tools.html" class="active">📄 PDF & Docs</a></li>
+                <li><a href="random_generator.html">🎲 Zufall & Entscheidung</a></li>
+                <li><a href="timer.html">⏳ Timer</a></li>
+                <li><a href="#">🤖 KI & Automation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="tools">
+        <div class="tool" id="drop-zone-convert">
+            <h2>🔄 PDF zu Word Konverter</h2>
+            <p>Ziehe deine PDF-Datei hierher oder klicke zum Hochladen</p>
+            <input type="file" id="pdfUploadConvert" accept=".pdf" style="display: none;">
+            <button class="convert-btn" id="uploadBtn">📥 Datei auswählen</button>
+            <p id="downloadLink"></p>
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let fileInputConvert = document.getElementById("pdfUploadConvert");
+        let uploadBtnConvert = document.getElementById("uploadBtn");
+        let downloadLink = document.getElementById("downloadLink");
+
+        uploadBtnConvert.addEventListener("click", function () {
+            fileInputConvert.click();
+        });
+
+        fileInputConvert.addEventListener("change", function () {
+            if (this.files.length > 0) {
+                convertPdfToWord(this.files[0]);
+            }
+        });
+
+        async function convertPdfToWord(file) {
+            let formData = new FormData();
+            formData.append("file", file);
+
+            try {
+                let response = await fetch("http://127.0.0.1:8000/convert-pdf-to-word/", {
+                    method: "POST",
+                    body: formData
+                });
+
+                if (response.ok) {
+                    let blob = await response.blob();
+                    let url = window.URL.createObjectURL(blob);
+                    let link = document.createElement("a");
+                    link.href = url;
+                    link.download = file.name.replace(".pdf", ".docx");
+                    link.innerText = "📥 Hier klicken, um das Word-Dokument herunterzuladen";
+                    downloadLink.innerHTML = "";
+                    downloadLink.appendChild(link);
+                }
+            } catch (error) {
+                console.error("❌ Fehler beim Senden der Anfrage:", error);
+            }
+        }
+    });
+    </script>
+
+    <footer>
+        <p>&copy; 2024 Webtools21 | Entwickelt mit ❤️ für schnelle Dokumentenverarbeitung</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+/* Allgemeine Stile */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f0ff;
+    color: #333;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #6200ea;
+    color: white;
+    padding: 20px;
+    font-size: 1.5em;
+}
+
+.navbar {
+    background-color: #3700b3;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #f5f0ff;
+    color: #3700b3;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #6200ea, #3700b3);
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    border-radius: 0 0 20px 20px;
+}
+
+.hero h1 {
+    font-size: 4em;
+    font-weight: bold;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background-color: white;
+    color: #6200ea;
+    text-decoration: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+    background-color: #e3dcff;
+    color: #3700b3;
+}
+
+/* PDF Drag & Drop Sektion */
+.tools {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.tool {
+    background: white;
+    border: 3px dashed #6200ea;
+    padding: 40px;
+    width: 400px;
+    height: 250px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #3700b3;
+    transition: all 0.3s ease;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.tool:hover {
+    background: #e3dcff;
+    border-color: #3700b3;
+}
+
+.tool p {
+    font-size: 1em;
+    margin-top: 5px;
+}
+
+/* Timer Sektion */
+.timer-container {
+    background: white;
+    padding: 50px;
+    margin: 50px auto;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.timer-container h2 {
+    color: #6200ea;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.timer-display {
+    font-size: 8em;
+    font-weight: bold;
+    color: #3700b3;
+    margin: 20px 0;
+}
+
+#timeInput {
+    font-size: 1.5em;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #6200ea;
+    border-radius: 5px;
+    text-align: center;
+    width: 100px;
+}
+
+button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    cursor: pointer;
+    border-radius: 8px;
+    margin: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #3700b3;
+}
+
+/* Zufallsgenerator Sektion */
+.random-generator {
+    background: white;
+    padding: 40px;
+    margin: 50px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.random-generator h2 {
+    color: #6200ea;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.random-generator p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+#randomButton {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+#randomButton:hover {
+    background-color: #3700b3;
+}
+
+.random-output {
+    font-size: 1.8em;
+    font-weight: bold;
+    color: #3700b3;
+    margin-top: 20px;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: #3700b3;
+    color: white;
+}
+
+/* SEO-optimierte Sektion */
+.seo-content {
+    max-width: 1000px;
+    margin: 60px auto;
+    background: white;
+    padding: 60px;
+    border-radius: 15px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.seo-content h2 {
+    color: #6200ea;
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    font-weight: bold;
+}
+
+.seo-content p {
+    font-size: 1.4em;
+    line-height: 1.8;
+    color: #444;
+    margin-bottom: 25px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.feature-box {
+    background: #f5f0ff;
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+}
+
+.feature-box h3 {
+    color: #3700b3;
+    font-size: 1.7em;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.feature-box p {
+    font-size: 1.2em;
+    color: #555;
+}

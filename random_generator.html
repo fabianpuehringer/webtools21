@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webtools21 - Zufall & Entscheidung</title>
+    <link rel="stylesheet" href="ki_converter.css">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="ki_converter.html">🏠 Home</a></li>
+                <li><a href="pdf_tools.html">📄 PDF & Docs</a></li>
+                <li><a href="random_generator.html" class="active">🎲 Zufall & Entscheidung</a></li>
+                <li><a href="timer.html">⏳ Timer</a></li>
+                <li><a href="#">🤖 KI & Automation</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="random-generator">
+        <h2>🎲 Zufallsgenerator</h2>
+        <p>Klicke auf den Button, um eine zufällige Zahl oder Entscheidung zu erhalten!</p>
+        <button id="randomButton">🔀 Zufall generieren</button>
+        <p id="randomResult" class="random-output"></p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Webtools21 | Entwickelt mit ❤️ für schnelle Entscheidungen</p>
+    </footer>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let randomButton = document.getElementById("randomButton");
+        let randomResult = document.getElementById("randomResult");
+
+        randomButton.addEventListener("click", function () {
+            let randomValue = Math.floor(Math.random() * 100) + 1;
+            randomResult.textContent = "🎉 Deine zufällige Zahl: " + randomValue;
+            randomResult.style.fontSize = "1.8em";
+            randomResult.style.color = "#6200ea";
+            randomResult.style.fontWeight = "bold";
+        });
+    });
+    </script>
+
+</body>
+</html>
